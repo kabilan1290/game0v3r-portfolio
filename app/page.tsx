@@ -14,8 +14,9 @@ const NAV_ITEMS = [
   { s: 1, label: '[ profile ]' },
   { s: 2, label: '[ impact ]' },
   { s: 3, label: '[ work ]' },
-  { s: 4, label: '[ talks ]' },
-  { s: 5, label: '[ contact me ]' },
+  { s: 4, label: '[ research ]' },
+  { s: 5, label: '[ talks ]' },
+  { s: 6, label: '[ contact me ]' },
 ]
 
 const IMPACT_POSTS = [
@@ -163,16 +164,61 @@ const WORK = [
   },
 ]
 
-const ACHIEVEMENTS = [
-  { year: '2024', title: 'Groww Live Hacking Event - Most Valuable Hacker', url: 'https://www.linkedin.com/posts/kabilan-s-4b8a90173_livehacking-bugbounty-bugbase-activity-7323215328765759489-3qE4' },
-  { year: '2022', title: 'TCS HackQuest Season 6 - Title Winner', url: 'https://www.linkedin.com/feed/update/urn:li:activity:6912621009028206592/' },
-  { year: '2022', title: 'CCoE Hyderabad Great AppSec Hackathon - Top 10', url: 'https://www.linkedin.com/feed/update/urn:li:activity:6874677941771620352/' },
-  { year: '2021', title: 'OSRC - Top 20 Most Valuable Researcher', url: 'https://www.linkedin.com/posts/kabilan-s-4b8a90173_oppo-bughunting-securityresearch-activity-6700095376403382272-QyV1' },
-  { year: '2021', title: 'OWASP Las Vegas CTF - Winner (Top 1)', url: 'https://www.linkedin.com/posts/kabilan-s-4b8a90173_hacking-cybersecurity-bughunting-activity-6704721263308369920-tTql' },
-  { year: '2021', title: 'OSRC Yearly Leaderboard - Top 9', url: 'https://security.oppo.com/en/charts' },
-  { year: '2020-21', title: 'NOVA CTF - Winner', url: 'https://www.linkedin.com/posts/kabilan-s-4b8a90173_cybersecurity-event-technology-activity-6784495285969276928-Ze6W' },
-  { year: '2020', title: 'OSRC Yearly Leaderboard - Top 10', url: 'https://security.oppo.com/en/charts' },
-  { year: '2019', title: 'Tamil Nadu Police Hackathon - Winner', url: 'https://www.linkedin.com/posts/kabilan-s-4b8a90173_bugbounty-bounty-penetrationtesting-activity-6604713886455291904-2vyS' },
+const RESEARCH_ACHIEVEMENTS = [
+  {
+    id: 1,
+    title: 'Groww Live Hacking Event - Most Valuable Hacker (2024)',
+    url: 'https://www.linkedin.com/posts/kabilan-s-4b8a90173_livehacking-bugbounty-bugbase-activity-7323215328765759489-3qE4',
+    description: 'Recognized as the Most Valuable Hacker at Groww\'s live hacking event, demonstrating critical vulnerability discovery skills in a competitive setting'
+  },
+  {
+    id: 2,
+    title: 'TCS HackQuest Season 6 - Title Winner (2022)',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:6912621009028206592/',
+    description: 'Secured first place as Title Winner in TCS HackQuest Season 6, a national-level cybersecurity competition'
+  },
+  {
+    id: 3,
+    title: 'CCoE Hyderabad Great AppSec Hackathon - Top 10 (2022)',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:6874677941771620352/',
+    description: 'Placed in Top 10 at the Center for Cyber Security\'s Application Security Hackathon in Hyderabad'
+  },
+  {
+    id: 4,
+    title: 'OPPO Security Response Center - Top 20 Most Valuable Researcher (2021)',
+    url: 'https://www.linkedin.com/posts/kabilan-s-4b8a90173_oppo-bughunting-securityresearch-activity-6700095376403382272-QyV1',
+    description: 'Ranked among Top 20 Most Valuable Security Researchers in OPPO\'s Security Response Center for high-impact vulnerability discoveries'
+  },
+  {
+    id: 5,
+    title: 'OWASP Las Vegas CTF - Winner (2021)',
+    url: 'https://www.linkedin.com/posts/kabilan-s-4b8a90173_hacking-cybersecurity-bughunting-activity-6704721263308369920-tTql',
+    description: 'First place winner at OWASP Las Vegas Capture The Flag competition'
+  },
+  {
+    id: 6,
+    title: 'OPPO Security Response Center - Yearly Leaderboard Top 9 (2021)',
+    url: 'https://security.oppo.com/en/charts',
+    description: 'Secured 9th position on OPPO\'s yearly security researcher leaderboard'
+  },
+  {
+    id: 7,
+    title: 'NOVA CTF - Winner (2020-21)',
+    url: 'https://www.linkedin.com/posts/kabilan-s-4b8a90173_cybersecurity-event-technology-activity-6784495285969276928-Ze6W',
+    description: 'Winner of NOVA CTF cybersecurity competition across 2020 and 2021 seasons'
+  },
+  {
+    id: 8,
+    title: 'OPPO Security Response Center - Yearly Leaderboard Top 10 (2020)',
+    url: 'https://security.oppo.com/en/charts',
+    description: 'Achieved Top 10 ranking on OPPO\'s yearly security researcher leaderboard'
+  },
+  {
+    id: 9,
+    title: 'Tamil Nadu Police Hackathon - Winner (2019)',
+    url: 'https://www.linkedin.com/posts/kabilan-s-4b8a90173_bugbounty-bounty-penetrationtesting-activity-6604713886455291904-2vyS',
+    description: 'First place winner at Tamil Nadu Police Department\'s cybersecurity hackathon'
+  },
 ]
 
 const TALKS = [
@@ -336,7 +382,7 @@ export default function Page() {
                 <a href="https://blog.game0v3r.in" target="_blank" rel="noopener noreferrer" className="hero-btn">
                   [ blog ]
                 </a>
-                <button type="button" className="hero-btn" onClick={() => scrollToSec(5)}>
+                <button type="button" className="hero-btn" onClick={() => scrollToSec(6)}>
                   [ contact me ]
                 </button>
               </div>
@@ -383,33 +429,42 @@ export default function Page() {
 │  WORK EXPERIENCE  //  timeline   │
 └──────────────────────────────────┘`}</pre>
               <WorkTimeline work={WORK} />
+            </div>
+          </section>
 
-              <div className="achievements-section fade-row">
-                <div className="achievements-header">
-                  <h2 className="achievements-title">Independent Security Researcher</h2>
-                  <p className="achievements-period">Jan 2019 – Present</p>
-                </div>
-                <div className="achievements-label">Recognition & Awards:</div>
-                <div className="achievements-grid">
-                  {ACHIEVEMENTS.map((achievement) => (
-                    <a
-                      key={`${achievement.year}-${achievement.title}`}
-                      href={achievement.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="achievement-card"
-                    >
-                      <span className="achievement-card-year">{achievement.year}</span>
-                      <span className="achievement-card-title">{achievement.title}</span>
-                    </a>
-                  ))}
-                </div>
+          {/* 4 — research achievements */}
+          <section className="sec" id="sec4" data-idx="4">
+            <div className="sec-inner">
+              <pre className="ascii-header fade-row">{`┌──────────────────────────────────┐
+│  INDEPENDENT SECURITY RESEARCHER │
+│  Jan 2019 – Present              │
+└──────────────────────────────────┘`}</pre>
+              <div className="impact-grid">
+                {RESEARCH_ACHIEVEMENTS.map((achievement) => (
+                  <a
+                    key={achievement.id}
+                    href={achievement.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="impact-card fade-row"
+                  >
+                    <div className="impact-card-inner">
+                      <h3 className="impact-title">{achievement.title}</h3>
+                      {achievement.description && (
+                        <p className="impact-desc">{achievement.description}</p>
+                      )}
+                      <div className="impact-footer">
+                        <span className="impact-link-text">[ view details ]</span>
+                      </div>
+                    </div>
+                  </a>
+                ))}
               </div>
             </div>
           </section>
 
-          {/* 4 — talks */}
-          <section className="sec" id="sec4" data-idx="4">
+          {/* 5 — talks */}
+          <section className="sec" id="sec5" data-idx="5">
             <div className="sec-inner">
               <pre className="ascii-header fade-row">{`┌──────────────────────────────────┐
 │  TALKS  //  conference & events  │
@@ -438,8 +493,8 @@ export default function Page() {
             </div>
           </section>
 
-          {/* 5 — contact */}
-          <section className="sec" id="sec5" data-idx="5">
+          {/* 6 — contact */}
+          <section className="sec" id="sec6" data-idx="6">
             <div className="sec-inner">
               <pre className="ascii-header fade-row">{`┌──────────────────────────────────┐
 │  CONTACT ME  //  channels        │
